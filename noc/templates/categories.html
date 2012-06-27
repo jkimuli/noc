@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+{%block title%} Services - Categories {%endblock%}
+
+{%block content%}
+
+{%if types%}
+
+<table>
+    {%for type in types%}
+     <tr>
+        <td>{{type.id}}</td>
+        <td>{{type.title}}</td>
+        <td><a href='/category_tickets/{{type.id}}'>Show all Tickets</a></td>
+     </tr>
+    {%endfor%}
+</table>
+{%else%}
+ <p>No defined categories in database</p>
+{%endif%}
+{%endblock%}

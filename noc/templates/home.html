@@ -1,0 +1,29 @@
+{%extends "base.html" %}
+
+{%block title%} Home {%endblock%}
+
+{%block content%}
+
+  {%if tickets%}
+   <table>
+    {%for ticket in tickets%}
+    <tr>
+        <td>{{ticket.description}}</td>
+        <td>{{ticket.site_code}}</td>
+        <td>{{ticket.assigned_to}}</td>
+        <td>{{ticket.category}}</td>
+        <td>{{ticket.start_time}}</td>
+        <td>{{ticket.close_time}}</td>
+        <td>{{ticket.get_status_display}}</td>
+        {%if editable%}
+        <td><a href='/edit/{{ticket.id}}'>Edit</a></td>
+        {%else%}
+        <td></td>
+        {%endif%}
+    </tr>
+    {%endfor%}
+   </table>
+   {%endif%}
+{%endblock%}
+
+

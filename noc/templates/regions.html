@@ -1,0 +1,21 @@
+{%extends 'base.html'%}
+{%block title%} Services - Regions {%endblock%}
+
+{%block content%}
+
+{%if regions%}
+
+<table>
+    {%for region in regions%}
+     <tr>
+        <td>{{region.id}}</td>
+        <td>{{region.name}}</td>
+        <td><a href='/region_engineers/{{region.id}}'>Show all Engineers</a></td>
+     </tr>
+    {%endfor%}
+</table>
+{%else%}
+    <p> No defined regions in database</p>
+{%endif%}
+
+{%endblock%}

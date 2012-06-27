@@ -1,0 +1,22 @@
+{%extends 'base.html'%}
+{%block title%} Services - Sites {%endblock%}
+
+{%block content%}
+
+{%if sites%}
+
+<table>
+    {%for site in sites%}
+     <tr>
+        <td>{{site.id}}</td>
+        <td>{{site.location}}</td>
+        <td>{{site.lat}}</td>
+        <td>{{site.lng}}</td>
+        <td><a href='/site_tickets/{{site.id}}'>Show all Tickets</a></td>
+     </tr>
+    {%endfor%}
+</table>
+{%else%}
+ <p> No sites listed in database</p>
+{%endif%}
+{%endblock%}
