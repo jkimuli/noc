@@ -6,7 +6,7 @@
 
 
 {%block content%}
- <form method='post' action=''>
+ <form method="post" action=''>
     {% csrf_token %}
     {% if add %}<p> Create New Ticket</p>
     {%else%}<p> Edit Ticket</p>{%endif%}
@@ -19,7 +19,6 @@
  {%else%}
  <input type='submit' value = 'Edit'>
  {%endif%}
- 
  </form>
  
 {%endblock%}

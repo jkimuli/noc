@@ -5,18 +5,34 @@
 
 {%if sites%}
 
-<table>
+<table class="table table-striped table-bordered table-condensed">
+    <thead>
+        <tr>
+            <th> Site ID</th>
+            <th>Site Name</th>
+            <th> Latitude</th>
+            <th> Longitude</th>
+            
+        </tr>
+    </thead>
+    
+    <tbody>
     {%for site in sites%}
      <tr>
-        <td>{{site.id}}</td>
+        <td>{{site.site_code}}</td>
         <td>{{site.location}}</td>
         <td>{{site.lat}}</td>
         <td>{{site.lng}}</td>
+        <td><a href='/edit_site/{{site.id}}'>Edit</a></td>
         <td><a href='/site_tickets/{{site.id}}'>Show all Tickets</a></td>
      </tr>
     {%endfor%}
+    </tbody>
 </table>
+
 {%else%}
  <p> No sites listed in database</p>
 {%endif%}
+
+<br><p> <a href='/add_site'>Add new site</a></p>
 {%endblock%}

@@ -52,7 +52,7 @@ class FieldEngineer(models.Model):
         
     
 class Ticket(models.Model):
-    description = models.TextField()
+    description = models.TextField(blank=False)
     site_code = models.ForeignKey(Site)
     category = models.ForeignKey(Category)
     assigned_by = models.ForeignKey(User,editable=False)

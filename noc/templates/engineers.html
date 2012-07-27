@@ -5,7 +5,14 @@
 
 {%if engineers%}
 
-<table>
+<table class="table table-striped table-bordered table-condensed">
+    <thead>
+        <th>Full Name</th>
+        <th>Phone Number</th>
+        <th>Alternate Phone Number</th>
+        <th>Region</th>
+    </thead>
+    <tbody>
     {%for engineer in engineers%}
      <tr>
         <td>{{engineer.full_name}}</td>
@@ -15,6 +22,7 @@
         <td><a href='/engineer_tickets/{{engineer.id}}'>Show all Tickets</a></td>
      </tr>
     {%endfor%}
+    </tbody>
 </table>
 {%else%}
   <p> No Engineers in database</p>

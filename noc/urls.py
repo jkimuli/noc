@@ -50,6 +50,29 @@ urlpatterns = patterns('',
     
     url(r'^sites/$',site_page),
     
+    #add a new site
+    
+    url(r'^add_site/$',add_site),
+    
+    #edit existing site
+    
+    url(r'^edit_site/(?P<site_id>\d+)/$',edit_site),
+    
+    #showing engineers in a given region
+    
+    url(r'^region_engineers/(?P<region_id>\d+)/$',region_engineers),
+    
+    #showing tickets assigned to a specific engineer
+    
+    url(r'^engineer_tickets/(?P<engineer_id>\d+)/$',engineer_tickets),
+    
+    #showing tickets  belonging to a specific category
+    
+    url(r'^category_tickets/(?P<category_id>\d+)/$',category_tickets),
+    
+    #showing tickets for a specific site
+    
+    url(r'^site_tickets/(?P<site_id>\d+)/$',site_tickets),
 )
 
 urlpatterns += staticfiles_urlpatterns()
