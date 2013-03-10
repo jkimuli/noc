@@ -41,8 +41,6 @@ def save_page(request):
         
         if form.is_valid():
             ticket = form.save(commit=False)
-
-	    
             
             ticket.assigned_by = request.user
             

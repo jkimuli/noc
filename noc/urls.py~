@@ -21,7 +21,6 @@ urlpatterns = patterns('',
      url(r'^$','issue_tracker.views.main_page'),
      
     #urls for issue_tracker app
-
      url(r'^ticktr/',include('issue_tracker.urls')),
     
     

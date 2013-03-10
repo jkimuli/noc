@@ -1,0 +1,24 @@
+{%extends 'base.html'%}
+
+
+{%block title%}  Site - Operations {%endblock%}
+
+
+
+{%block content%}
+ <form method="post" action=''>
+    {% csrf_token %}
+    {% if add %}<p> Create Site</p>
+    {%else%}<p> Edit Site</p>{%endif%}
+   
+      {{form.as_p}}  
+    
+    
+ {%if add%}
+ <input type='submit' value = 'Create'>
+ {%else%}
+ <input type='submit' value = 'Edit'>
+ {%endif%}
+ </form>
+ 
+{%endblock%}

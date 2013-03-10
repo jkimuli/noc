@@ -1,0 +1,37 @@
+{%extends 'base.html'%}
+{%block title%} Services - Regions {%endblock%}
+{%block external%}
+ <script type="text/javascript" src="{{STATIC_URL}}search.js"></script>
+{%endblock%}
+
+{%block content%}
+
+{%if regions%}
+
+<table class="table table-striped table-bordered table-condensed">
+    <thead>
+        <th>ID</th>
+        <th>Name</th>
+    </thead>
+    
+    <tbody>
+    {%for region in regions%}
+     <tr>
+        <td>{{region.id}}</td>
+        <td>{{region.name}}</td>
+        <td><a href='/region_engineers/{{region.id}}'>Show all Engineers</a></td>
+     </tr>
+    {%endfor%}
+    </tbody>
+</table>
+{%else%}
+    <p> No defined regions in database</p>
+{%endif%}
+
+<div id="search-results">
+    {% if show_results%}
+       
+    {%endif %}
+</div>
+
+{%endblock%}
